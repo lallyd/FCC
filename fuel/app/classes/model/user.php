@@ -44,7 +44,14 @@ class Model_User extends \Orm\Model
 			throw new UserNotFoundException($username);
 		}
 
+		$user = reset($user);
+
 		Session::set('userid', $user->id);
+	}
+
+	public static function logout()
+	{
+		Session::delete('userid');
 	}
 
 	public static function check_login()
