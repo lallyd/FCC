@@ -3,9 +3,9 @@
 	    <fieldset>
 	   	 <legend>Edit Job</legend>
 		    <div class="control-group">
-			    <label class="control-label" for="name">Status</label>
+			    <label class="control-label" for="status">Status</label>
 			    <div class="controls">
-				    <select class="span4">
+				    <select id="status" name="status" class="span4">
 		                <option>1</option>
 		                <option>2</option>
 		                <option>3</option>
@@ -15,21 +15,21 @@
 			    </div>
 		    </div>
 		    <div class="control-group">
-			    <label class="control-label" for="contact-number">Customer</label>
+			    <label class="control-label" for="customer">Customer</label>
 			    <div class="controls">
-				   <input type="text" class="span4" id="contact-number" name="contact_number">
+				   <input type="text" class="span4" id="customer" name="customer">
 			    </div>
 		    </div>
 		    <div class="control-group">
-			    <label class="control-label" for="contact-number">Fault Description</label>
+			    <label class="control-label" for="fault">Fault Description</label>
 			    <div class="controls">
-				    <textarea class="span4" id="contact-number" name="contact_number"></textarea>
+				    <textarea class="span4" id="fault" name="fault"></textarea>
 			    </div>
 		    </div>
 		    <div class="control-group">
-			    <label class="control-label" for="contact-number">Shop</label>
+			    <label class="control-label" for="shop">Shop</label>
 			    <div class="controls">
-				    <select class="span4">
+				    <select name="shop" id="shop" class="span4">
 		                <option>1</option>
 		                <option>2</option>
 		                <option>3</option>
