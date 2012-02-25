@@ -1,7 +1,7 @@
-<form class="well form-inline text-center">
+<form class="well form-inline text-center" action="<?php echo Uri::Create('auth/login'); ?>" method="post">
 	<div class="container">
-		<input type="text" class="input-small" placeholder="Email">
-		<input type="password" class="input-small" placeholder="Password">
+		<input type="text" name="username" class="input-medium" placeholder="Username">
+		<input type="password" name="password" class="input-medium" placeholder="Password">
 		<button type="submit" class="btn btn-inverse">Go</button>
 	</div>
 </form>

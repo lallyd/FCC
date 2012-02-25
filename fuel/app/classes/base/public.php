@@ -6,6 +6,19 @@ class Base_Public extends Controller_Template
 	{
 		parent::__construct($req, $res);
 		$this->data = array();
+
+		Model_User::check_login();
+
+		try {
+			$this->user = Model_User::logged_in_user();
+		}
+		catch(Exception $e)
+		{
+			$this->user = new Model_User;
+		}
+
+		$this->data['user'] = $this->user;
+
 	}
 
 	public function after($res)
