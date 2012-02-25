@@ -21,7 +21,7 @@
 			<tr>
 				<td><?php echo $j->id; ?></td>
 				<td><?php echo $j->item_description; ?></td>
-				<td><?php echo $j->customer_id; ?></td>
+				<td><?php echo $j->customer->name; ?></td>
 				<td class="span1 text-center"><a href="<?php echo Uri::Create("job/view/".$j->id); ?>"><i class="icon-eye-open"></i></a></td>
 				<td class="span1 text-center"><a href="<?php echo Uri::Create("job/edit/".$j->id); ?>"><i class="icon-pencil"></i></a></td>
 			</tr>

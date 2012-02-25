@@ -5,6 +5,7 @@
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/css/jquery-ui-bootstrap/jquery-ui-1.8.16.custom.css" />
 </head>
 <body>
 	<div class="navbar">
@@ -23,7 +24,6 @@
 				    <li><a href="<?php echo Uri::Create('customer'); ?>">Customer</a></li>
 				    <li><a href="<?php echo Uri::Create('shop'); ?>">Shop</a></li>
 				    <li><a href="<?php echo Uri::Create('status'); ?>">Status</a></li>
-				    <li><a href="<?php echo Uri::Create('notes'); ?>">Notes</a></li>
 				    <li><a href="<?php echo Uri::Create('user'); ?>">My Account</a></li>
 					<?php endif; ?>
 				</ul>
@@ -57,5 +57,9 @@
             <?php echo $content; ?>
         </div>
     </div>
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="/assets/js/site.js"></script>
 </body>
 </html>

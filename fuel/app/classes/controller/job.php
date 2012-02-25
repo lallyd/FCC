@@ -71,6 +71,7 @@ class Controller_Job extends Base_Private
 		$this->data['job'] = $j;
 		$this->data['status'] = Model_Status::find('all');
 		$this->data['shop'] = Model_Shop::find('all');
+		$this->data['customer'] = Model_Customer::find('all');
 	}
 
 }
