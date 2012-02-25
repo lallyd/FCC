@@ -43,8 +43,16 @@
    	</tbody>
     </table>
 
-    <h2>Notes</h2>
-    <p class="well">None yet</p>
-
+   <h2>Notes</h2>
+   <?php if (count($job->note) == 0): ?>
+   <p class="well">None yet</p>
+   <?php else: ?>
+   <?php foreach ($job->note as $n): ?>
+   <div class="well">
+      <small>Created <?php echo date('jS M Y @ g:ia', $n->created_at); ?> by <?php echo $n->user->name; ?></small>
+      <p><?php echo $n->content; ?></p>      
+   </div>
+   <?php endforeach; ?>
+   <?php endif; ?>
     
 </div>

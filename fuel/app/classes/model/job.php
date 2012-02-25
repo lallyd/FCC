@@ -15,6 +15,7 @@ class Model_Job extends \Orm\Model
 	);
 
 	protected static $_belongs_to = array("user", "customer", "shop", "status");
+	protected static $_has_many = array("note");
 
 	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(

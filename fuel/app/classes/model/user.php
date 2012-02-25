@@ -13,7 +13,7 @@ class Model_User extends \Orm\Model
 		'contact_number'
 	);
 
-	protected static $_has_many = array("job");
+	protected static $_has_many = array("job", "note");
 
 	public function logged_in()
 	{
