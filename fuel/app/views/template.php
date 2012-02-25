@@ -39,6 +39,19 @@
 	    </div>
     </div>
 
+    <?php $msgs = Message::Get(); ?>
+	<?php if ($msgs): ?>
+		<div id="messages" class="container">
+			<?php foreach ($msgs as $type => $messages): ?>
+			<?php foreach ($messages as $m): ?>
+				    <div class="alert alert-<?php echo $type; ?>">
+				    <?php echo $m; ?>
+				    </div>
+			<?php endforeach; ?>
+			<?php endforeach; ?>
+		</div>
+	<?php endif; ?>
+
     <div id="wrapper">
         <div id="content">
             <?php echo $content; ?>

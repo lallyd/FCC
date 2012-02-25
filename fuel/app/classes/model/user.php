@@ -28,7 +28,7 @@ class Model_User extends \Orm\Model
 		return static::$logged_in;
 	}
 
-	public function login($username, $password)
+	public static function login($username, $password)
 	{
 		$password = $password; // Encrypt what they passed in
 
