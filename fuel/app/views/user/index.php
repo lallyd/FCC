@@ -5,16 +5,18 @@
    	<tbody>
    		<tr>
    			<td class="title">Username</td>
-   			<td>mheap</td>
+   			<td><?php echo $user->username; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Name</td>
-   			<td>Michael</td>
+   			<td><?php echo $user->name; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Contact Number</td>
-   			<td>07908249481</td>
+   			<td><?php echo $user->contact_number; ?></td>
    		</tr>
    	</tbody>
     </table>
+
+    <a href="<?php echo Uri::Create('user/edit'); ?>" class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Edit Details</a>
 </div>
