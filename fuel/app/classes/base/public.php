@@ -12,7 +12,7 @@ class Base_Public extends Controller_Template
 		try {
 			$this->user = Model_User::logged_in_user();
 		}
-		catch(Exception $e)
+		catch(NotLoggedInException $e)
 		{
 			$this->user = new Model_User;
 		}

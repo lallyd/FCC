@@ -22,7 +22,7 @@ class Model_User extends \Orm\Model
 	{
 		if (is_null(static::$logged_in))
 		{
-			throw new Exception("Not Logged In");
+			throw new NotLoggedInException("Not Logged In");
 		}
 
 		return static::$logged_in;
