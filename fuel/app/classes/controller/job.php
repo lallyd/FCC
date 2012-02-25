@@ -60,7 +60,8 @@ class Controller_Job extends Base_Private
 
 			if ($j->is_new())
 			{
-				$j->customer_id = Input::Post("customer");
+				$cust = reset(Model_Customer::find('all', array('where' => array( array('name','=', Input::Post("customer"))))));
+				$j->customer_id = $cust->id;
 			}
 
 			$j->save();

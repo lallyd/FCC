@@ -5,20 +5,46 @@ class Controller_Customer extends Base_Private
 
 	public function action_index()
 	{
-		$this->template->title = 'Customer &raquo; Index';
-		$this->template->content = View::forge('customer/index');
+		$this->data['customers'] = Model_Customer::find('all');
+		$this->template->title = 'Customer List';
 	}
 
-	public function action_view()
+	public function action_view($id)
 	{
-		$this->template->title = 'Customer &raquo; View';
-		$this->template->content = View::forge('customer/view');
+		$this->data['customer'] = Model_Customer::find($id);
+		$this->template->title = 'View Customer';
 	}
 
 	public function action_add()
 	{
-		$this->template->title = 'Customer &raquo; Add';
-		$this->template->content = View::forge('customer/add');
+		$this->template->title = 'Add Customer';
+		$this->data['action'] = 'Add';
+		$this->add_edit(new Model_Customer);
+	}
+
+	public function action_edit($id)
+	{
+		$model = Model_Customer::find($id);
+		$this->template->title = 'Edit Customer';
+		$this->data['action'] = 'Edit';
+		$this->add_edit($model);
+	}
+
+	public function add_edit($c)
+	{
+
+		if (Input::Is_Post())
+		{
+			$c->name = Input::Post("name");
+			$c->email = Input::Post("email");
+			$c->contact_number = Input::Post("contact_number");
+			$c->save();
+
+			Message::Success("Customer " .$this->data['action']."ed");
+			Response::Redirect("customer/view/".$c->id);
+		}
+
+		$this->data['customer'] = $c;
 	}
 
 	public function action_ajax_search()
