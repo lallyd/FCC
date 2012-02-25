@@ -9,11 +9,11 @@
    		</tr>
    		<tr>
    			<td class="title">Status</td>
-   			<td><?php echo $job->status_id; ?></td>
+   			<td><?php echo $job->status->status; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Customer</td>
-   			<td><?php echo $job->customer_id; ?></td>
+   			<td><?php echo $job->customer->name; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Fault Description</td>
@@ -26,19 +26,19 @@
    	<tbody>
    		<tr>
    			<td class="title">Created By</td>
-   			<td><?php echo $job->user_id; ?></td>
+   			<td><?php echo $job->user->name; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Created At</td>
-   			<td><?php echo date('jS M Y', $job->created_at); ?></td>
+   			<td><?php echo date('jS M Y @ g:ia', $job->created_at); ?></td>
    		</tr>
    		<tr>
    			<td class="title">Last Updated</td>
-   			<td><?php echo date('jS M Y', $job->updated_at); ?></td>
+   			<td><?php echo date('jS M Y @ g:ia', $job->updated_at); ?></td>
    		</tr>
    		<tr>
    			<td class="title">Shop</td>
-   			<td><?php echo $job->shop_id; ?></td>
+   			<td><?php echo $job->shop->location; ?></td>
    		</tr>
    	</tbody>
     </table>

@@ -14,6 +14,8 @@ class Model_Job extends \Orm\Model
 		'updated_at'
 	);
 
+	protected static $_belongs_to = array("user", "customer", "shop", "status");
+
 	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(
 			'events' => array('before_insert'),
