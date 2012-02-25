@@ -17,11 +17,11 @@
 
 		        <ul class="nav">
 				    <li class="active"><a href="<?php echo Uri::Create('dashboard'); ?>"><i class="icon-home icon-white"></i> Home</a></li>
-				    <li><a href="#">Job</a></li>
-				    <li><a href="#">Customer</a></li>
-				    <li><a href="#">Shop</a></li>
-				    <li><a href="#">Status</a></li>
-				    <li><a href="#">Notes</a></li>
+				    <li><a href="<?php echo Uri::Create('job'); ?>">Job</a></li>
+				    <li><a href="<?php echo Uri::Create('customer'); ?>">Customer</a></li>
+				    <li><a href="<?php echo Uri::Create('shop'); ?>">Shop</a></li>
+				    <li><a href="<?php echo Uri::Create('status'); ?>">Status</a></li>
+				    <li><a href="<?php echo Uri::Create('notes'); ?>">Notes</a></li>
 				    <li><a href="<?php echo Uri::Create('user'); ?>">My Account</a></li>
 				</ul>
 
