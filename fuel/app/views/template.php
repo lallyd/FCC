@@ -11,12 +11,12 @@
 	    <div class="navbar-inner">
 		    <div class="container">
 
-		    	    <a class="brand" href="#">
+		    	    <a class="brand" href="<?php echo Uri::Create('dashboard'); ?>">
 				    Fylde Computer Centre
 				    </a>
 
 		        <ul class="nav">
-				    <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+				    <li class="active"><a href="<?php echo Uri::Create('dashboard'); ?>"><i class="icon-home icon-white"></i> Home</a></li>
 				    <li><a href="#">Job</a></li>
 				    <li><a href="#">Customer</a></li>
 				    <li><a href="#">Shop</a></li>
