@@ -8,7 +8,8 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Name</th>
+				<th>Description</th>
+				<th>Customer</th>
 				<th>View</th>
 				<th>Edit</th>
 			</tr>
@@ -17,6 +18,7 @@
 			<tr>
 				<td>1</td>
 				<td>Samsung GTX180</td>
+				<td>John Doe</td>
 				<td class="span1 text-center"><a href="<?php echo Uri::Create("job/view/"); ?>"><i class="icon-eye-open"></i></a></td>
 				<td class="span1 text-center"><a href="<?php echo Uri::Create("job/edit/"); ?>"><i class="icon-pencil"></i></a></td>
 			</tr>
