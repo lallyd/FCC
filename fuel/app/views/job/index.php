@@ -4,6 +4,8 @@
     	<input type="text" class="search-query" placeholder="Search">
     </form>
 
+    <p><a href="<?php echo Uri::Create('job/add'); ?>" class="btn btn-inverse"><i class="icon-pencil icon-white"></i> New Job</a></p>
+
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
