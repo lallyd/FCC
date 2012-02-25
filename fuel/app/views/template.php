@@ -22,7 +22,7 @@
 				    <li><a href="#">Shop</a></li>
 				    <li><a href="#">Status</a></li>
 				    <li><a href="#">Notes</a></li>
-				    <li><a href="#">Account</a></li>
+				    <li><a href="<?php echo Uri::Create('user'); ?>">My Account</a></li>
 				</ul>
 
 				<ul class="nav pull-right">
