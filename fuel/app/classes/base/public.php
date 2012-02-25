@@ -41,7 +41,7 @@ class Base_Public extends Controller_Template
 
 		$c = strtolower( str_replace("Controller_", "", \Request::active()->controller) );
 		$m = \Request::active()->action;
-		//if ($m == "add" || $m == "edit"){ $m = "addandedit"; }
+		if ($m == "add" || $m == "edit"){ $m = "addedit"; }
 
 		$this->template->content = View::forge($c.'/'.$m, $this->data);
 

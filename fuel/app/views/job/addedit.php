@@ -1,7 +1,7 @@
 <div class="container">
     <form class="form-horizontal" method="post" action="">
 	    <fieldset>
-	   	 <legend>Add Job</legend>
+	   	 <legend><?php echo $action; ?> Job</legend>
 	   	 	<div class="control-group">
 			    <label class="control-label" for="item_description">Item Description</label>
 			    <div class="controls">
@@ -19,12 +19,14 @@
 		            </select>
 			    </div>
 		    </div>
+		    <?php if ($job->is_new()): ?>
 		    <div class="control-group">
 			    <label class="control-label" for="customer">Customer</label>
 			    <div class="controls">
 				   <input type="text" class="span4" id="customer" name="customer" value="<?php echo $job->customer_id; ?>">
 			    </div>
 		    </div>
+			<?php endif; ?>
 		    <div class="control-group">
 			    <label class="control-label" for="fault_description">Fault Description</label>
 			    <div class="controls">

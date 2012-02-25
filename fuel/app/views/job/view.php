@@ -1,5 +1,5 @@
 <div class="container">
-
+   <p><a href="<?php echo Uri::Create('job/edit/'.$job->id); ?>" class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Edit Job</a></p>
 	<h2><?php echo $job->item_description; ?></h2>
 	<table class="table table-striped table-bordered">
    	<tbody>
