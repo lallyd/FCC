@@ -23,12 +23,15 @@
 		    <div class="control-group">
 			    <label class="control-label" for="customer">Customer</label>
 			    <div class="controls">
-
+			    <input type="text" class="span4" id="customer" name="customer" value="<?php echo $job->customer_id; ?>">
+				   
+				   <?php /*
 				   <select name="customer" id="customer">
 				   <?php foreach($customer as $c): ?>
 		                <option value="<?php echo $c->id; ?>" <?php echo ($c->id == $job->customer_id) ? 'selected' : ''; ?>><?php echo $c->name; ?></option>
 		           <?php endforeach; ?>
 		       		</select>
+		       		*/?>
 			    </div>
 		    </div>
 			<?php endif; ?>
