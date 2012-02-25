@@ -15,7 +15,7 @@
 				    </a>
 
 		        <ul class="nav">
-				    <li class="active"><a href="#">Home</a></li>
+				    <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
 				    <li><a href="#">Job</a></li>
 				    <li><a href="#">Customer</a></li>
 				    <li><a href="#">Shop</a></li>
@@ -25,8 +25,8 @@
 				</ul>
 
 				<ul class="nav pull-right">
-				    <li><a href="#">Login</a></li>
-				    <li><a href="#">Logout</a></li>
+				    <li><a href="<?php echo Uri::Create('auth/login'); ?>">Login</a></li>
+				    <li><a href="<?php echo Uri::Create('auth/logout'); ?>">Logout</a></li>
 			    </ul>
 		    </div>
 	    </div>
