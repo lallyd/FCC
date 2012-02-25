@@ -1,23 +1,23 @@
 <div class="container">
 
-	<h2>Samsung GTX180</h2>
+	<h2><?php echo $job->item_description; ?></h2>
 	<table class="table table-striped table-bordered">
    	<tbody>
    		<tr>
    			<td class="title">ID</td>
-   			<td>1</td>
+   			<td><?php echo $job->id; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Status</td>
-   			<td>Awaiting Parts</td>
+   			<td><?php echo $job->status_id; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Customer</td>
-   			<td>Mr John Doe</td>
+   			<td><?php echo $job->customer_id; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Fault Description</td>
-   			<td>The heatsink fell off</td>
+   			<td><?php echo $job->fault_description; ?></td>
    		</tr>
    	</tbody>
     </table>
@@ -26,19 +26,19 @@
    	<tbody>
    		<tr>
    			<td class="title">Created By</td>
-   			<td>Michael</td>
+   			<td><?php echo $job->user_id; ?></td>
    		</tr>
    		<tr>
    			<td class="title">Created At</td>
-   			<td>07908249481</td>
+   			<td><?php echo date('jS M Y', $job->created_at); ?></td>
    		</tr>
    		<tr>
    			<td class="title">Last Updated</td>
-   			<td>07908249481</td>
+   			<td><?php echo date('jS M Y', $job->updated_at); ?></td>
    		</tr>
    		<tr>
    			<td class="title">Shop</td>
-   			<td>07908249481</td>
+   			<td><?php echo $job->shop_id; ?></td>
    		</tr>
    	</tbody>
     </table>
