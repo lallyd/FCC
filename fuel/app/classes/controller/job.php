@@ -6,6 +6,8 @@ class Controller_Job extends Base_Private
 	public function action_index()
 	{
 		$this->template->title = 'Job List';
+
+		$this->data['jobs'] = Model_Job::find('all');
 	}
 
 	public function action_view($id)
