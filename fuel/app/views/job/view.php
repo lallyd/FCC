@@ -43,7 +43,14 @@
    	</tbody>
     </table>
 
+   <h2>Add Note</h2>
+   <form class="well" method="post" action="<?php echo Uri::Create("job/add_note/". $job->id); ?>">
+      <textarea class="span10" name="note"></textarea>
+      <button class="btn btn-inverse" style="margin-top: 15px; margin-left: 15px;"><i class="icon-plus icon-white"></i> Add Note</button>
+   </form>
+
    <h2>Notes</h2>
+
    <?php if (count($job->note) == 0): ?>
    <p class="well">None yet</p>
    <?php else: ?>

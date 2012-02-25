@@ -32,6 +32,22 @@ class Controller_Job extends Base_Private
 		$this->template->title = 'Edit Job';
 	}
 
+	public function action_add_note($id)
+	{
+		if (Input::Is_Post())
+		{
+			$n = new Model_Note;
+			$n->job_id = $id;
+			$n->user_id = $this->user->id;
+			$n->content = Input::Post("note");
+			$n->save();
+
+			Message::Success("Note Added");	
+		}
+		
+		Response::Redirect("job/view/".$id);
+	}
+
 	protected function add_edit($j)
 	{
 		if (Input::Is_Post())
