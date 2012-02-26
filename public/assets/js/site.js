@@ -14,4 +14,23 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".search-query").keyup(function(){
+		var tr = $("table tr:gt(0)");
+
+		if ($(this).val() == "")
+		{
+			tr.show();
+		}
+
+		tr.hide();
+		var re = new RegExp($(this).val(), "i");
+		tr.each(function(){
+			if ($(this).text().match(re))
+			{
+				$(this).show();
+			}
+		})
+	});
+
+
 });
