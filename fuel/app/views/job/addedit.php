@@ -24,6 +24,7 @@
 			    <label class="control-label" for="customer">Customer</label>
 			    <div class="controls">
 			    <input type="text" class="span4" id="customer" name="customer" value="<?php echo $job->customer_id; ?>">
+			    <a href="<?php echo Uri::Create('customer/add'); ?>" target="_blank" class="btn btn-inverse">Add Customer</a>
 				   
 				   <?php /*
 				   <select name="customer" id="customer">
