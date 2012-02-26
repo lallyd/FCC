@@ -7,7 +7,13 @@ class Controller_Job extends Base_Private
 	{
 		$this->template->title = 'Job List';
 
-		$this->data['jobs'] = Model_Job::find('all');
+		$options = array();
+		if (Input::Get("status"))
+		{
+			$options['where'] = array( array("status_id","=", Input::Get("status")) );
+		}
+
+		$this->data['jobs'] = Model_Job::find('all', $options);
 	}
 
 	public function action_view($id)
