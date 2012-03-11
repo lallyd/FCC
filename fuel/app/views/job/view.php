@@ -16,9 +16,17 @@
    			<td><?php echo $job->customer->name; ?></td>
    		</tr>
    		<tr>
-   			<td class="title">Fault Description</td>
-   			<td><?php echo $job->fault_description; ?></td>
-   		</tr>
+            <td class="title">Fault Description</td>
+            <td><?php echo $job->fault_description; ?></td>
+         </tr>
+         <tr>
+            <td class="title">Accessories</td>
+            <td><?php echo $job->accessories; ?></td>
+         </tr>
+         <tr>
+            <td class="title">Serial Number</td>
+            <td><?php echo $job->serial_number; ?></td>
+         </tr>
    	</tbody>
     </table>
 

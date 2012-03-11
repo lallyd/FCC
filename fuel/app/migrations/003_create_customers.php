@@ -11,6 +11,7 @@ class Create_customers
 			'name' => array('constraint' => 255, 'type' => 'varchar'),
 			'email' => array('constraint' => 255, 'type' => 'varchar'),
 			'contact_number' => array('constraint' => 20, 'type' => 'varchar'),
+			'address' => array('type' => 'text'),
 		), array('id'));
 	}
 

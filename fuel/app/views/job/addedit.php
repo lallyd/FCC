@@ -25,14 +25,6 @@
 			    <div class="controls">
 			    <input type="text" class="span4" id="customer" name="customer" value="<?php echo $job->customer_id; ?>">
 			    <a href="<?php echo Uri::Create('customer/add'); ?>" target="_blank" class="btn btn-inverse">Add Customer</a>
-				   
-				   <?php /*
-				   <select name="customer" id="customer">
-				   <?php foreach($customer as $c): ?>
-		                <option value="<?php echo $c->id; ?>" <?php echo ($c->id == $job->customer_id) ? 'selected' : ''; ?>><?php echo $c->name; ?></option>
-		           <?php endforeach; ?>
-		       		</select>
-		       		*/?>
 			    </div>
 		    </div>
 			<?php endif; ?>
@@ -40,6 +32,18 @@
 			    <label class="control-label" for="fault_description">Fault Description</label>
 			    <div class="controls">
 				    <textarea class="span4" id="fault_description" name="fault_description"></textarea>
+			    </div>
+		    </div>
+		    <div class="control-group">
+			    <label class="control-label" for="accessories">Accessories</label>
+			    <div class="controls">
+				    <textarea class="span4" id="accessories" name="accessories"><?php echo $job->accessories; ?></textarea>
+			    </div>
+		    </div>
+		    <div class="control-group">
+			    <label class="control-label" for="serial_number">Serial Number</label>
+			    <div class="controls">
+				   <input type="text" class="span4" id="serial_number" name="serial_number" value="<?php echo $job->serial_number; ?>">
 			    </div>
 		    </div>
 		    <div class="control-group">

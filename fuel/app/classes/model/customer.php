@@ -6,7 +6,8 @@ class Model_Customer extends \Orm\Model
 		'id',
 		'name',
 		'email',
-		'contact_number'
+		'contact_number',
+		'address'
 	);
 
 	protected static $_has_many = array("job");

@@ -37,6 +37,7 @@ class Controller_Customer extends Base_Private
 		{
 			$c->name = Input::Post("name");
 			$c->email = Input::Post("email");
+			$c->address = Input::Post("address");
 			$c->contact_number = Input::Post("contact_number");
 			$c->save();
 

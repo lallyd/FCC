@@ -15,11 +15,17 @@
 			    </div>
 		    </div>
 		    <div class="control-group">
+			    <label class="control-label" for="address">Address</label>
+			    <div class="controls">
+				   <textarea class="span4" id="address" name="address"><?php echo $customer->address; ?></textarea>
+			    </div>
+		    </div>
+		    <div class="control-group">
 			    <label class="control-label" for="contact-number">Contact Number</label>
 			    <div class="controls">
 				   <input type="text" class="span4" id="contact-number" name="contact_number" value="<?php echo $customer->contact_number; ?>">
 			    </div>
-		    </div>
+		    </div>		    
 		    <div class="form-actions">
 	            <input class="btn btn-success" type="submit" value="Save" />
 	            <a href="<?php echo Uri::Create("customer"); ?>" class="btn btn-danger">Cancel</a>

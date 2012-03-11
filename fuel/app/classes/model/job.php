@@ -10,6 +10,8 @@ class Model_Job extends \Orm\Model
 		'status_id',
 		'fault_description',
 		'item_description',
+		'serial_number',
+		'accessories',
 		'created_at',
 		'updated_at'
 	);
@@ -27,4 +29,29 @@ class Model_Job extends \Orm\Model
 			'mysql_timestamp' => false,
 		),
 	);
+
+
+	public function highlight_class()
+	{
+
+		if ($this->status->status == "In progress" or $this->status->status == "Pending" )
+		{
+			if ($this->updated_at < time()-259200)
+			{
+				return "over-72h";
+			}
+
+			if ($this->updated_at < time()-86400)
+			{
+				return "over-24h";
+			}
+		}
+
+		if ($this->status->status == "Awaiting collection")
+		{
+			return "awaiting-collection";
+		}
+
+		
+	}
 }

@@ -13,6 +13,11 @@ class Controller_Job extends Base_Private
 			$options['where'] = array( array("status_id","=", Input::Get("status")) );
 		}
 
+		if (Input::Get("date"))
+		{
+			$options['order_by'] = array("created_at"=> Input::Get("date"));
+		}
+
 		$this->data['jobs'] = Model_Job::find('all', $options);
 	}
 
@@ -61,6 +66,8 @@ class Controller_Job extends Base_Private
 			$j->status_id = Input::Post("status");
 			$j->fault_description = Input::Post("fault_description");
 			$j->item_description = Input::Post("item_description");
+			$j->serial_number = Input::Post("serial_number");#
+			$j->accessories = Input::Post("accessories");
 			$j->shop_id = Input::Post("shop");
 			$j->user_id = $this->user->id;
 

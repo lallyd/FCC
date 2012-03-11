@@ -11,10 +11,14 @@
    			<td class="title">Email</td>
    			<td><?php echo $customer->email; ?></td>
    		</tr>
+         <tr>
+            <td class="title">Address</td>
+            <td><?php echo $customer->address; ?></td>
+         </tr>
    		<tr>
-   			<td class="title">Contact Number</td>
-   			<td><?php echo $customer->contact_number; ?></td>
-   		</tr>
+            <td class="title">Contact Number</td>
+            <td><?php echo $customer->contact_number; ?></td>
+         </tr>         
    	</tbody>
     </table>
     

@@ -14,6 +14,8 @@ class Create_jobs
 			'status_id' => array('constraint' => 11, 'type' => 'int'),
 			'fault_description' => array('type' => 'text'),
 			'item_description' => array('type' => 'text'),
+			'serial_number' => array('type' => 'varchar', 'constraint' => 255),
+			'accessories' => array('type' => 'text'),
 			'created_at' => array('constraint' => 11, 'type' => 'int'),
 			'updated_at' => array('constraint' => 11, 'type' => 'int'),
 		), array('id'));

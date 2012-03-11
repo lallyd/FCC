@@ -6,3 +6,15 @@ td.title {
 	font-weight: bold;
 	width: 15em;
 }
+
+.over-24h {
+	color: orange;
+}
+
+.over-72h {
+	color:red;
+}
+
+.awaiting-collection {
+	color:green;
+}
