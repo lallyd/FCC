@@ -37,15 +37,35 @@ class Controller_Shop extends Base_Private
 
 	protected function add_edit($m)
 	{
-		if (Input::is_post()){
-		$m->location=Input::post('location');
-		$m->contact_number=Input::post('contact_number');
-		$m->email=Input::post('email');
-		$m->skype=Input::post('skype');
-		$m->save();
+		if (Input::is_post())
+		{
+			$m->location=Input::post('location');
+			$m->contact_number=Input::post('contact_number');
+			$m->email=Input::post('email');
+			$m->skype=Input::post('skype');
 
-		Message::Success("Shop " .$this->data['action']."ed");
-		Response::Redirect("shop/view/".$m->id);			
+			$val = Validation::forge();
+			$val->add("location", "Location")->add_rule("required");
+			$val->add("contact_number", "Contact Number")->add_rule("required");
+			$val->add("email", "Email")-> add_rule("valid_email");
+
+			if ($val->run())
+			{
+			Message::Success("Shop " .$this->data['action']."ed");
+			$m->save();
+			Response::Redirect("shop/view/".$m->id);	
+			}
+
+			else
+			{
+				foreach ($val->error() as $err)
+				{
+					Message::Error($err);
+				}
+			}
+		
+
+				
 		}
 
 		$this->data['shop'] = $m;

@@ -51,9 +51,24 @@ class Controller_Job extends Base_Private
 			$n->job_id = $id;
 			$n->user_id = $this->user->id;
 			$n->content = Input::Post("note");
-			$n->save();
+			
+			$val = Validation::forge();
+			$val->add("note", "Note")->add_rule("required");
 
+			if ($val->run())
+			{
 			Message::Success("Note Added");	
+			$n->save();
+			}
+
+			else
+			{
+				foreach ($val->error() as $err)
+				{
+					Message::Error($err);
+				}
+			}
+
 		}
 		
 		Response::Redirect("job/view/".$id);
@@ -66,11 +81,21 @@ class Controller_Job extends Base_Private
 			$j->status_id = Input::Post("status");
 			$j->fault_description = Input::Post("fault_description");
 			$j->item_description = Input::Post("item_description");
-			$j->serial_number = Input::Post("serial_number");#
+			$j->serial_number = Input::Post("serial_number");
 			$j->accessories = Input::Post("accessories");
 			$j->shop_id = Input::Post("shop");
 			$j->user_id = $this->user->id;
 
+			$val = Validation::forge();
+			$val->add("status", "Status")->add_rule("required");
+			$val->add("fault_description", "Fault Description")->add_rule("required");
+			$val->add("item_description", "Item Description")->add_rule("required");
+			$val->add("accessories", "Accessories")->add_rule("required");
+			$val->add("shop", "Shop")->add_rule("required");
+
+			if ($val->run())
+
+			{
 			if ($j->is_new())
 			{
 				$cust = reset(Model_Customer::find('all', array('where' => array( array('name','=', Input::Post("customer"))))));
@@ -80,6 +105,15 @@ class Controller_Job extends Base_Private
 			$j->save();
 			Message::Success("Job ".$this->data['action'].'ed');
 			Response::Redirect("job/view/".$j->id);
+			}
+
+			else
+			{
+				foreach ($val->error() as $err)
+				{
+					Message::Error($err);
+				}
+			}
 		}
 
 		$this->data['job'] = $j;

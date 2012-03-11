@@ -35,14 +35,32 @@ class Controller_Customer extends Base_Private
 
 		if (Input::Is_Post())
 		{
+
 			$c->name = Input::Post("name");
 			$c->email = Input::Post("email");
 			$c->address = Input::Post("address");
 			$c->contact_number = Input::Post("contact_number");
-			$c->save();
 
-			Message::Success("Customer " .$this->data['action']."ed");
-			Response::Redirect("customer/view/".$c->id);
+			$val = Validation::forge();
+			$val->add("name", "Name")->add_rule("required");
+			$val->add("email", "Email")-> add_rule("valid_email");
+			$val->add("contact_number", "Contact Number")->add_rule("required");
+
+			if ($val->run())
+			{
+				$c->save();
+
+				Message::Success("Customer " .$this->data['action']."ed");
+				Response::Redirect("customer/view/".$c->id);
+			}
+
+			else
+			{
+				foreach ($val->error() as $err)
+				{
+					Message::Error($err);
+				}
+			}
 		}
 
 		$this->data['customer'] = $c;

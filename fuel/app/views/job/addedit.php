@@ -37,7 +37,7 @@
 		    <div class="control-group">
 			    <label class="control-label" for="accessories">Accessories</label>
 			    <div class="controls">
-				    <textarea class="span4" id="accessories" name="accessories"><?php echo $job->accessories; ?></textarea>
+				    <textarea class="span4" id="accessories" name="accessories" placeholder="If no accessories provided, please type 'None'."><?php echo $job->accessories; ?></textarea>
 			    </div>
 		    </div>
 		    <div class="control-group">
