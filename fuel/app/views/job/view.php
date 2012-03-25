@@ -1,5 +1,8 @@
 <div class="container">
-   <p><a href="<?php echo Uri::Create('job/edit/'.$job->id); ?>" class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Edit Job</a></p>
+   <p>
+      <a href="<?php echo Uri::Create('job/edit/'.$job->id); ?>" class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Edit Job</a>
+      <a href="<?php echo Uri::Create('job/view/'.$job->id.'?print'); ?>" class="btn btn-inverse"><i class="icon-print icon-white"></i> Print Job</a>
+   </p>
 	<h2><?php echo $job->item_description; ?></h2>
 	<table class="table table-striped table-bordered">
    	<tbody>
@@ -22,6 +25,10 @@
          <tr>
             <td class="title">Accessories</td>
             <td><?php echo $job->accessories; ?></td>
+         </tr>
+         <tr>
+            <td class="title">User Password</td>
+            <td><?php echo $job->password; ?></td>
          </tr>
          <tr>
             <td class="title">Serial Number</td>

@@ -47,6 +47,12 @@
 			    </div>
 		    </div>
 		    <div class="control-group">
+			    <label class="control-label" for="password">User Password</label>
+			    <div class="controls">
+				   <input type="text" class="span4" id="password" name="password" value="<?php echo $job->password; ?>">
+			    </div>
+		    </div>
+		    <div class="control-group">
 			    <label class="control-label" for="shop">Shop</label>
 			    <div class="controls">
 				    <select name="shop" id="shop" class="span4">

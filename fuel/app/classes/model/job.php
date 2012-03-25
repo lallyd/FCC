@@ -12,6 +12,7 @@ class Model_Job extends \Orm\Model
 		'item_description',
 		'serial_number',
 		'accessories',
+		'password',
 		'created_at',
 		'updated_at'
 	);

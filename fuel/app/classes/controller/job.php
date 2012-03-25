@@ -25,6 +25,11 @@ class Controller_Job extends Base_Private
 	{
 		$this->template->title = 'View Job';
 		$this->data['job'] = Model_Job::find($id);
+
+		if (Input::Get("print") !== null){
+			echo View::Forge("job/print", $this->data);
+			exit;
+		}
 	}
 
 	public function action_add()
@@ -84,6 +89,7 @@ class Controller_Job extends Base_Private
 			$j->serial_number = Input::Post("serial_number");
 			$j->accessories = Input::Post("accessories");
 			$j->shop_id = Input::Post("shop");
+			$j->password = Input::Post("password");
 			$j->user_id = $this->user->id;
 
 			$val = Validation::forge();
