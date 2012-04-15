@@ -20,10 +20,21 @@ class Controller_User extends Base_Private
 			$val->add("name", "Name")->add_rule("required");
 			$val->add("contact_number", "Contact Number")->add_rule("required");
 
+			if (Input::Post("password")){
+				$val->add("password", "Password")->add_rule("trim")->add_rule("required");
+			}
+
 			if ($val->run())
 			{
-			$this->user->save();
-			Message::Success("Details Updated");
+
+				// If they gave us a password
+				if (Input::Post("password"))
+				{
+					$this->user->password = BCrypt::hash(Input::Post("password"));
+				}
+
+				$this->user->save();
+				Message::Success("Details Updated");
 			}
 
 			else
@@ -33,6 +44,8 @@ class Controller_User extends Base_Private
 					Message::Error($err);
 				}
 			}
+
+			Response::Redirect("user/edit");
 		}
 
 		$this->template->title = 'Edit Account';

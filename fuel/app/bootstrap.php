@@ -13,6 +13,7 @@ Autoloader::add_classes(array(
 	// Example: 'View' => APPPATH.'classes/view.php',
 	'Input' => APPPATH.'classes/input.php',
 	'Message' => APPPATH.'classes/message.php',
+	'BCrypt' => APPPATH.'classes/Bcrypt.php',
 ));
 
 // Register the autoloader

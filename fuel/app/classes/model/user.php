@@ -30,14 +30,11 @@ class Model_User extends \Orm\Model
 		return static::$logged_in;
 	}
 
-	public static function login($username, $password)
+	public static function get_by_username($username)
 	{
-		$password = $password; // Encrypt what they passed in
-
 		$user = static::find('all', array(
 			'where' => array(
-				array('username', '=', $username),
-				array('password', '=', $password)
+				array('username', '=', $username)
 			)
 		));
 
@@ -46,9 +43,12 @@ class Model_User extends \Orm\Model
 			throw new UserNotFoundException($username);
 		}
 
-		$user = reset($user);
+		return reset($user);
+	}
 
-		Session::set('userid', $user->id);
+	public static function force_login($id)
+	{
+		Session::set('userid', $id);
 	}
 
 	public static function logout()

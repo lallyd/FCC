@@ -15,9 +15,20 @@ class Controller_Auth extends Base_Public
 			{
 				try 
 				{
-					Model_User::login( Input::Post("username"), Input::Post("password") );
-					Message::Success("Logged In");
-					Response::Redirect("/");
+					// Get user details
+					$u = Model_User::get_by_username(Input::Post("username"));
+
+					if (BCrypt::check(Input::Post("password"), $u->password)){
+						Model_User::force_login($u->id);
+						Message::Success("Logged In");
+						Response::Redirect("/");
+					}
+					else
+					{
+						throw new UserNotFoundException;
+					}
+
+					
 				}
 				catch (UserNotFoundException $e)
 				{

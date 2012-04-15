@@ -14,6 +14,14 @@
 				    <input type="text" class="input-xlarge" id="contact-number" name="contact_number" value="<?php echo $user->contact_number; ?>">
 			    </div>
 		    </div>
+		    <div class="control-group">
+			    <label class="control-label" for="password">New Password</label>
+			    <div class="controls">
+				    <input type="password" class="input-xlarge" id="password" name="password" />
+				    <div class="help-block">Leave empty to keep existing password</div>
+			    </div>
+
+		    </div>
 		    <div class="form-actions">
 	            <input class="btn btn-success" type="submit" value="Save" />
 	            <a href="<?php echo Uri::Create("user"); ?>" class="btn btn-danger">Cancel</a>
